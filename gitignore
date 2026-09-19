@@ -1,0 +1,10 @@
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VSCodium workspace settings & history
+.vscode/
+
+# Local zip builds
+*.zip
