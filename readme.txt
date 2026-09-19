@@ -4,7 +4,7 @@ Tags: gutenberg, block-editor, restrict-blocks, allowed-blocks, editor-curation
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ Inspired by and built upon techniques shared in:
 * [MRW Simplified Editor](https://wordpress.org/plugins/mrw-web-design-simple-tinymce/) by Mark Root-Wiley (MRW Web Design).
 
 == Changelog ==
+
+= 1.1.1 =
+* Published on https://github.com/oldrup/cdly-block-restrictions
 
 = 1.1.0 =
 * Added CSS stylesheet to declutter the Block Inspector panel (hides block descriptions, help text, and custom CSS input).

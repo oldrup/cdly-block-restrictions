@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name:       Codeally Block Editor Restrictions
+ * Plugin URI:        https://github.com/oldrup/cdly-block-restrictions
  * Description:       Enforces editorial restrictions on the Block Editor (disables Block Directory, Remote Patterns, Openverse, unapproved blocks, and embed variations).
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.5
  * Requires PHP:      8.2
  * Author:            Codeally
- * Author URI:        https://codeally.dk	
+ * Author URI:        https://codeally.dk
  * License:           GPL-2.0-or-later
  * Text Domain:       cdly-block-restrictions
  */
