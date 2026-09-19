@@ -4,7 +4,7 @@ Tags: gutenberg, block-editor, restrict-blocks, allowed-blocks, editor-curation
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Enforces strict, opinionated editorial restrictions on the Block Editor for post
 
 Codeally Block Editor Restrictions is a zero-configuration, opinionated editorial curation plugin designed to declutter the Block Editor and enforce consistency when writing blog posts.
 
-It restricts post authors to a strictly vetted whitelist of core and custom blocks while turning off external network calls, remote directory popups, and unused embed providers.
+It restricts post authors to a strictly vetted whitelist of core and custom blocks while turning off external network calls, remote directory popups, unused embed providers, and distracting inspector UI panels.
 
 = Features =
 
@@ -23,6 +23,7 @@ It restricts post authors to a strictly vetted whitelist of core and custom bloc
 * **Disables Remote Patterns:** Stops WordPress.org remote block patterns from loading in the pattern inserter.
 * **Disables Openverse:** Removes the Openverse media search category and tab from the editor media library.
 * **Prunes Embed Variations:** Unregisters obscure embed providers, keeping only YouTube, Vimeo, Spotify, Pocket Casts, and VideoPress.
+* **Declutters Inspector UI:** Hides block card descriptions, control help text, and advanced custom CSS panels in the sidebar.
 * **Preserves Site Editor:** Full block availability remains untouched in the Site Editor, for pages, and for custom post types.
 
 == Installation ==
@@ -46,6 +47,9 @@ Inspired by and built upon techniques shared in:
 * [MRW Simplified Editor](https://wordpress.org/plugins/mrw-web-design-simple-tinymce/) by Mark Root-Wiley (MRW Web Design).
 
 == Changelog ==
+
+= 1.1.0 =
+* Added CSS stylesheet to declutter the Block Inspector panel (hides block descriptions, help text, and custom CSS input).
 
 = 1.0.0 =
 * Initial release.

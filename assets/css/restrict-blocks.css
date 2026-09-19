@@ -1,0 +1,15 @@
+/**
+ * Codeally Editor UI Decluttering
+ * Hides block descriptions and input field help text in the Block Inspector panel.
+ */
+
+/* Hide block description card in inspector */
+.block-editor-block-inspector .block-editor-block-card__description,
+
+/* Hide control help text underneath input fields */
+.block-editor-block-inspector .components-base-control__help,
+
+/* Hide Advanced custom CSS input area */
+.block-editor-block-inspector .block-editor-global-styles-advanced-panel__custom-css-input {
+  display: none;
+}

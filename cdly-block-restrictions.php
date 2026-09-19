@@ -2,11 +2,11 @@
 /**
  * Plugin Name:       Codeally Block Editor Restrictions
  * Description:       Enforces editorial restrictions on the Block Editor (disables Block Directory, Remote Patterns, Openverse, unapproved blocks, and embed variations).
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.5
  * Requires PHP:      8.2
  * Author:            Codeally
- * Author URI:        https://codeally.org
+ * Author URI:        https://codeally.dk	
  * License:           GPL-2.0-or-later
  * Text Domain:       cdly-block-restrictions
  */
@@ -100,20 +100,33 @@ function cdly_allowed_block_types_for_posts( array|bool $allowed_block_types, \W
 }
 
 /**
- * 5. Enqueue JavaScript to restrict embed block variations.
+ * 5. Enqueue JavaScript and CSS for Block Editor UI restrictions.
  */
 add_action( 'enqueue_block_editor_assets', 'cdly_enqueue_block_editor_restrictions' );
 function cdly_enqueue_block_editor_restrictions(): void {
-	$js_file = plugin_dir_path( __FILE__ ) . 'assets/js/restrict-blocks.js';
-	$js_url  = plugin_dir_url( __FILE__ ) . 'assets/js/restrict-blocks.js';
+	$plugin_path = plugin_dir_path( __FILE__ );
+	$plugin_url  = plugin_dir_url( __FILE__ );
 
+	// Enqueue CSS UI decluttering stylesheet.
+	$css_file = $plugin_path . 'assets/css/restrict-blocks.css';
+	if ( file_exists( $css_file ) ) {
+		wp_enqueue_style(
+			'cdly-restrict-blocks-style',
+			$plugin_url . 'assets/css/restrict-blocks.css',
+			array(),
+			(string) filemtime( $css_file )
+		);
+	}
+
+	// Enqueue JS variation unregistration script.
+	$js_file = $plugin_path . 'assets/js/restrict-blocks.js';
 	if ( file_exists( $js_file ) ) {
 		wp_enqueue_script(
-			'cdly-restrict-blocks',
-			$js_url,
+			'cdly-restrict-blocks-script',
+			$plugin_url . 'assets/js/restrict-blocks.js',
 			array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 			(string) filemtime( $js_file ),
-			true // Load in footer without async/defer timing conflicts.
+			true
 		);
 	}
 }
